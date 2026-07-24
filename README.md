@@ -1,5 +1,7 @@
 # Ask My Docs 🤖📚
 
+> ⚙️ **Backend RAG pipeline repo:** [Ask-My-Docs](https://github.com/adarshthakur9240/Ask-My-Docs) — the LangGraph pipeline, retrieval, reranking, and eval suite this UI connects to.
+
 > **Production-Grade LangGraph RAG Agent with Cross-Encoder Reranking & Self-Checking Grounding**
 
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://python.org)
