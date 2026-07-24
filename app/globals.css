@@ -1,26 +1,169 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #171924 0%, #1e2230 50%, #161822 100%);
+    color: #e8eaf0;
+    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    overflow-x: hidden;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #e8eaf0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Dark Neumorphic Dashboard Utility Classes ────────────────────────────── */
+
+/* Main Panel / Container Embossed Out of Background */
+.neu-panel {
+  background: linear-gradient(145deg, #262b3a, #202431);
+  box-shadow: 
+    10px 10px 24px rgba(10, 12, 18, 0.65),
+    -8px -8px 20px rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Interactive Card / Button (Sample questions, cards) */
+.neu-card-interactive {
+  background: linear-gradient(145deg, #272c3d, #212534);
+  box-shadow: 
+    8px 8px 18px rgba(10, 12, 18, 0.6),
+    -6px -6px 16px rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-card-interactive:hover {
+  background: linear-gradient(145deg, #2b3144, #232737);
+  box-shadow: 
+    12px 12px 24px rgba(10, 12, 18, 0.75),
+    -8px -8px 20px rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.neu-card-interactive:active {
+  box-shadow: 
+    inset 4px 4px 10px rgba(10, 12, 18, 0.6),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.03);
+  transform: translateY(0);
+}
+
+/* Soft Rounded 3D Icon Buttons / Containers (Embossed 3D control style) */
+.neu-icon-btn {
+  background: linear-gradient(145deg, #2a2f41, #202432);
+  box-shadow: 
+    5px 5px 12px rgba(10, 12, 18, 0.55),
+    -4px -4px 10px rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: #4a9eff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.neu-icon-btn:hover {
+  color: #60a5fa;
+  box-shadow: 
+    6px 6px 14px rgba(10, 12, 18, 0.65),
+    -5px -5px 12px rgba(255, 255, 255, 0.045);
+}
+
+.neu-icon-btn-active {
+  background: linear-gradient(145deg, #1e2230, #272b3b);
+  box-shadow: 
+    inset 3px 3px 8px rgba(10, 12, 18, 0.65),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.03);
+  color: #4a9eff;
+}
+
+/* Primary Action Button (Accent Glow + Dual Shadow) */
+.neu-button-primary {
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  box-shadow: 
+    6px 6px 16px rgba(10, 12, 18, 0.5),
+    0 0 18px rgba(74, 158, 255, 0.3),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.neu-button-primary:hover {
+  background: linear-gradient(145deg, #60a5fa, #3b82f6);
+  box-shadow: 
+    8px 8px 20px rgba(10, 12, 18, 0.6),
+    0 0 24px rgba(74, 158, 255, 0.45);
+}
+
+.neu-button-primary:disabled {
+  background: linear-gradient(145deg, #222635, #1c1f2b);
+  color: #475569;
+  box-shadow: 
+    inset 3px 3px 8px rgba(10, 12, 18, 0.5),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Inset Input Bar */
+.neu-input-bar {
+  background: #1c1f2b;
+  box-shadow: 
+    inset 6px 6px 14px rgba(10, 12, 18, 0.7),
+    inset -6px -6px 14px rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.25s ease;
+}
+
+.neu-input-bar:focus-within {
+  border-color: rgba(74, 158, 255, 0.4);
+  box-shadow: 
+    inset 6px 6px 14px rgba(10, 12, 18, 0.8),
+    inset -6px -6px 14px rgba(255, 255, 255, 0.03),
+    0 0 18px rgba(74, 158, 255, 0.25);
+}
+
+/* Neumorphic Pill Container */
+.neu-pill {
+  background: linear-gradient(145deg, #262b3a, #202331);
+  box-shadow: 
+    4px 4px 10px rgba(10, 12, 18, 0.45),
+    -3px -3px 8px rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Status Badges */
+.neu-badge-grounded {
+  background: linear-gradient(145deg, #162824, #12201d);
+  color: #34d399;
+  box-shadow: 
+    4px 4px 10px rgba(10, 12, 18, 0.4),
+    -3px -3px 8px rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.neu-badge-fallback {
+  background: linear-gradient(145deg, #2b2216, #231b11);
+  color: #fbbf24;
+  box-shadow: 
+    4px 4px 10px rgba(10, 12, 18, 0.4),
+    -3px -3px 8px rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+/* Step pulse particle animation */
+@keyframes pulseParticle {
+  0% { left: 0%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.animate-pulse-particle {
+  animation: pulseParticle 1.8s ease-in-out infinite;
 }
