@@ -13,7 +13,7 @@ import TechStackSection from "@/components/TechStackSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-export default function LandingPageRoot() {
+export default function LandingPage() {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
 
   return (
